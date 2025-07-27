@@ -13,6 +13,8 @@ class NotesApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily:
+            'Poppins', // هذا يجعل كل نوع الخط حق التطبيق نفسة نوع واحد
         brightness: Brightness.dark,
         // scaffoldBackgroundColor: Colors.amber, // ThemeData هذة اذا تريد تحديد الون مخصص
       ),
