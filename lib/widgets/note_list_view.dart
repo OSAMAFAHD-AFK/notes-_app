@@ -4,13 +4,28 @@ import 'package:notes_app/widgets/custom_note_item.dart';
 class NotesListView extends StatelessWidget {
   const NotesListView({super.key});
 
+  final List<Color> calmMutedColors = const [
+    Color(0xffFFCC80),
+    Color(0xFFDDBEA9),
+    Color(0xFF80CBC4),
+    Color(0xFFBCAAA4),
+    Color(0xffFFCC80),
+    Color(0xFF90A4AE),
+    Color(0xFFE6EE9C),
+    Color(0xFFCE93D8),
+    Color(0xFFFFAB91),
+    Color(0xFF4E5D6A),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (context, index) {
-        return const Padding(
-          padding: EdgeInsets.symmetric(vertical: 5),
-          child: NoteItem(),
+        final color = calmMutedColors[index % calmMutedColors.length];
+        // لتكرار الألوان // نقدر نكرر استخدام الألوان بدون ما نخرج عن حدود القائمة
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 5),
+          child: NoteItem(color: color),
         );
       },
     );
