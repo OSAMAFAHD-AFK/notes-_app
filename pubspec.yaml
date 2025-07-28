@@ -37,7 +37,7 @@ dependencies:
 
 dev_dependencies:
   flutter_lints: ^5.0.0
-  build_runner: ^2.6.0 # يستخدم في بناء الأكواد التلقائي ,أداة لتشغيل عمليات التوليد التلقائي
+  build_runner: ^2.5.4 # يستخدم في بناء الأكواد التلقائي ,أداة لتشغيل عمليات التوليد التلقائي
   hive_generator: ^2.0.1 # Hive تولد تلقائيًا كود ربط الكلاسات بـ
 
   flutter_test:
