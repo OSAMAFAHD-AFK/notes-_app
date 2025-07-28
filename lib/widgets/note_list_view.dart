@@ -6,15 +6,15 @@ class NotesListView extends StatelessWidget {
 
   final List<Color> calmMutedColors = const [
     Color(0xffFFCC80),
-    Color(0xFFDDBEA9),
     Color(0xFF80CBC4),
     Color(0xFFBCAAA4),
     Color(0xffFFCC80),
     Color(0xFF90A4AE),
-    Color(0xFFE6EE9C),
-    Color(0xFFCE93D8),
+    Color(0xFFDDBEA9),
     Color(0xFFFFAB91),
+    Color(0xFFE6EE9C),
     Color(0xFF4E5D6A),
+    Color(0xFFCE93D8),
   ];
 
   @override
