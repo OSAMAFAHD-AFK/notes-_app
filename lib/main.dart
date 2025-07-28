@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:notes_app/constants.dart';
+import 'package:notes_app/models/note_model.dart';
 
 import 'package:notes_app/views/notes_view.dart';
 
 void main() async {
   await Hive.initFlutter(); //hive حق init وليس  hive_flutter حق initFlutter ركز هنا استخدم
   await Hive.openBox(kNotesBox); // فتح صندوق الملاحظات
-
-  runApp(const NotesApp());
+  Hive.registerAdapter(NoteModelAdapter());
 }
 
 class NotesApp extends StatelessWidget {
