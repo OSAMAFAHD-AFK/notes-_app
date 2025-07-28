@@ -31,17 +31,18 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
+  flutter_bloc: ^9.1.1
   font_awesome_flutter: ^10.8.0
-  hive: ^2.2.3 #بدون إنترنت Flutter/Dart مكتبة قاعدة بيانات محلية سريعة لتخزين البيانات في تطبيقات
-  hive_flutter: ^1.1.0 # مع التطبيقات، Hive لتسهيل استخدام Flutter إضافة خاصة بـ
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
 
 dev_dependencies:
-  flutter_lints: ^5.0.0
   build_runner: ^2.5.4 # يستخدم في بناء الأكواد التلقائي ,أداة لتشغيل عمليات التوليد التلقائي
-  hive_generator: ^2.0.1 # Hive تولد تلقائيًا كود ربط الكلاسات بـ
+  flutter_lints: ^5.0.0
 
   flutter_test:
     sdk: flutter
+  hive_generator: ^2.0.1 # Hive تولد تلقائيًا كود ربط الكلاسات بـ
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

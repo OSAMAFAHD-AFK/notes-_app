@@ -29,7 +29,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
   String? title, subTitle;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-  // ما يتحقق من الأخطاء إلا لما تضغط زر الإرسال
+  // AutovalidateMode يحدد متى تظهر أخطاء الفورم تلقائيًا.
   @override
   Widget build(BuildContext context) {
     return Form(
