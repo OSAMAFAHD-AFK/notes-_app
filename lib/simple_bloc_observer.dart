@@ -5,17 +5,17 @@ class SimpleBlocObserver implements BlocObserver {
   @override
   void onChange(BlocBase bloc, Change change) {
     debugPrint('change = $change');
-    // العادية لاتظهر البيانات في عند نشر التطبيق Print هذة افضل من
+    // العادية لاتظهر البيانات في عند نشر التطبيق Print هذة افضل من : debugPrint
   }
 
   @override
   void onClose(BlocBase bloc) {
-    // TODO: implement onClose
+    debugPrint('Close = $bloc');
   }
 
   @override
   void onCreate(BlocBase bloc) {
-    // TODO: implement onCreate
+    debugPrint('Create = $bloc');
   }
 
   @override

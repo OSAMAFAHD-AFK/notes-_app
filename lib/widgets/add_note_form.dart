@@ -1,4 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/custom_button.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 
@@ -41,6 +46,14 @@ class _AddNoteFormState extends State<AddNoteForm> {
             onTap: () {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
+                log('Title: $title  & SubTitle: $subTitle');
+                var note = NoteModel(
+                  title: title!,
+                  content: subTitle!,
+                  dateTime: DateTime.now().toString(),
+                  color: Colors.blue.value,
+                );
+                context.read<AddNoteCubit>().addNote(note);
               } else {
                 autovalidateMode = AutovalidateMode.always;
                 /*🔁 يفحص الأخطاء دائمًا تلقائيًا في الفورم بمجرد ما المستخدم يكتب أو يغير أي شيء، بدون ما ينتظر يضغط زر إرسال.
