@@ -4,11 +4,14 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
+import 'package:notes_app/simple_bloc_observer.dart';
 
 import 'package:notes_app/views/notes_view.dart';
 
 void main() async {
   await Hive.initFlutter(); //hive حق init وليس  hive_flutter حق initFlutter ركز هنا استخدم
+
+  Bloc.observer = SimpleBlocObserver();
   await Hive.openBox(kNotesBox); // فتح صندوق الملاحظات
   Hive.registerAdapter(NoteModelAdapter());
   // حتى يستطيع حفظه وقراءته. Hive في (NoteModel مثل) وظيفتها تسجيل نوع بيانات مخصص   : Hive.registerAdapter
