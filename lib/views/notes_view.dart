@@ -12,6 +12,8 @@ class NotesView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
+            isScrollControlled: true,
+            //🟢 اسمح للـ Bottom Sheet أن تأخذ كامل ارتفاع الشاشة إذا احتاجت (يعني ممكن تصير طويلة وتوصل لأعلى الشاشة).
             context: context,
             builder: (context) {
               return const AddNoteBottomSheet();
