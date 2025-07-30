@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:hive/hive.dart';
 import 'package:meta/meta.dart';
@@ -14,6 +16,7 @@ class AddNoteCubit extends Cubit<AddNoteState> {
     try {
       var noteBox = Hive.box<NoteModel>(kNotesBox);
       await noteBox.add(note);
+      log("عدد العناصر في الصندوق: ${noteBox.length}");
       emit(AddNoteSuccess());
     } catch (e) {
       emit(AddNoteFailur('Failed to add note: $e'));
