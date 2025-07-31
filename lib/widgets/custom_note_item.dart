@@ -9,10 +9,10 @@ class NoteItem extends StatelessWidget {
   const NoteItem({
     super.key,
     required this.color,
-    required this.noteModel,
+    required this.note,
   });
   final Color color;
-  final NoteModel noteModel;
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -21,7 +21,7 @@ class NoteItem extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return const EditNoteView();
+              return EditNoteView(note: note);
             },
           ),
         );
@@ -38,14 +38,14 @@ class NoteItem extends StatelessWidget {
           children: [
             ListTile(
               title: Text(
-                noteModel.title,
+                note.title,
                 style: TextStyle(color: Colors.black, fontSize: 26),
               ),
 
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 20),
                 child: Text(
-                  noteModel.content,
+                  note.content,
                   style: TextStyle(
                     color: Colors.black.withOpacity(0.5),
                     fontSize: 18,
@@ -54,7 +54,7 @@ class NoteItem extends StatelessWidget {
               ),
               trailing: IconButton(
                 onPressed: () {
-                  noteModel.delete();
+                  note.delete();
                   context.read<NotesCubit>().fetchAllNotes();
                 },
                 icon: Icon(
@@ -67,7 +67,7 @@ class NoteItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 30),
               child: Text(
-                noteModel.dateTime,
+                note.dateTime,
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.black.withOpacity(0.5),

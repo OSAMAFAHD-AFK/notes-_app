@@ -7,9 +7,9 @@ part 'note_model.g.dart';
 @HiveType(typeId: 0) //فريدًا لكل  كلاس typeId يجب أن يكون
 class NoteModel extends HiveObject {
   @HiveField(0) //Hive يستخدم لتحديد الحقل في
-  final String title;
+  String title;
   @HiveField(1)
-  final String content;
+  String content;
   @HiveField(2)
   final String dateTime;
   @HiveField(3)
@@ -22,6 +22,8 @@ class NoteModel extends HiveObject {
     required this.color,
   });
 }
+/*HiveObject ورثنا من كلاس 
+ من اجل نستفيد بالدوال والخصايص التي بداخلها منها عمل اضافة وتعديل وحذف وغيرها  */
 
 /*✅ Hive أولًا: ما هي 
       Flutter وDart، خفيفة وسريعة لتطبيقات (Offline) هي مكتبة قاعدة بيانات محلية 

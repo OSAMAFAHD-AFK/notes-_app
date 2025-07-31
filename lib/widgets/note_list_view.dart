@@ -37,10 +37,7 @@ class NotesListView extends StatelessWidget {
               // لتكرار الألوان // نقدر نكرر استخدام الألوان بدون ما نخرج عن حدود القائمة
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 5),
-                child: NoteItem(
-                  color: color,
-                  noteModel: notes[index],
-                ),
+                child: NoteItem(color: color, note: notes[index]),
               );
             },
           ),
