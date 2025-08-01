@@ -62,7 +62,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
                       title: title!,
                       content: subTitle!,
                       dateTime: formattedCurrentDate,
-                      color: Colors.blue.value,
+                      color: context
+                          .read<AddNoteCubit>()
+                          .selectedColor
+                          .value,
                     );
                     context.read<AddNoteCubit>().addNote(note);
                   } else {
