@@ -6,11 +6,13 @@ class CustomTextField extends StatelessWidget {
     super.key,
     this.maxLines = 1,
     required this.title,
+    this.initialValue,
     this.onsaved,
     this.onChanged,
   });
   final int maxLines;
   final String title;
+  final String? initialValue;
   final void Function(String?)? onsaved;
   final void Function(String)? onChanged;
   @override
@@ -25,6 +27,8 @@ class CustomTextField extends StatelessWidget {
           return null;
         }
       },
+      initialValue: initialValue,
+      //  القيمة الافتراضية للنص داخل حقل الإدخال.
       maxLines: maxLines,
       cursorColor: kPrimaryColor,
       decoration: InputDecoration(
